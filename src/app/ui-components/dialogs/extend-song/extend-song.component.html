@@ -1,0 +1,23 @@
+<div class="song-details-container">
+  <h2 mat-dialog-title>Lyrics</h2>
+  <mat-dialog-content>
+
+    <p class="song-lyrics">{{data.songDetails.lyricsText}}</p>
+    <div class="youtube-video">
+      <iframe id="ytplayer" type="text/html" width="640" height="360" [src]="data.songDetails.youtubeLink"
+        frameborder="0"></iframe>
+    </div>
+    <div>
+        <h2 mat-dialog-title>Top Songs</h2>
+      <ul>
+        <li *ngFor="let topsong of data.songDetails.topTenSongs;">{{topsong}}</li>
+      </ul>
+
+    </div>
+  </mat-dialog-content>
+
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Close</button>
+  </mat-dialog-actions>
+
+</div>

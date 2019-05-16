@@ -1,0 +1,15 @@
+<mat-card class="card-container">
+
+  <p class="song-index">{{index}}</p>
+  <div class="song-image-container"><img mat-card-md-image src="{{song.images.default}}"></div>
+  <div class="song-title"  (click)="openSongExtension()">
+    <mat-card-title>{{song.heading.title | uppercase}}</mat-card-title>
+    <mat-card-subtitle>{{song.heading.subtitle}}</mat-card-subtitle>
+  </div>
+  <div class="song-link"><a href="{{song.url}}" target="_blank"><img class="shazam-link" src="assets/images/shazam-icon.png"></a></div>
+  <div class="favorites-container">
+    <mat-icon color="primary" *ngIf="!isFavorite" (click)="addToFavorites(song)">favorite_border</mat-icon>
+    <mat-icon color="primary" *ngIf="isFavorite" (click)="removeFromFavorites(song)">favorite</mat-icon>
+  </div>
+
+</mat-card>
